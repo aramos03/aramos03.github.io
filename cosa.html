@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Holi :3</title>
+
+    <style>
+        .centrar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #dfdfdf;
+            gap: 2rem;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+            width: 33vw;
+            gap: 2rem;
+            padding: 2.5rem;
+            background-color: aliceblue;
+            border: 1px solid black;
+            border-radius: 15px;
+            max-width: 33vw;
+        }
+
+        .msg {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #nyancat {
+            max-height: 200px;
+        }
+
+        .gif {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        #hola {
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="centrar">
+        <div class="card" id="1">
+            <div class="gif">
+                <img id="nyancat"
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/67401945-34fc-46b8-8e8f-1982847277d4/ddba22b-2fad9d00-1d3f-4ec8-a65d-199a09dfa4e1.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY3NDAxOTQ1LTM0ZmMtNDZiOC04ZThmLTE5ODI4NDcyNzdkNFwvZGRiYTIyYi0yZmFkOWQwMC0xZDNmLTRlYzgtYTY1ZC0xOTlhMDlkZmE0ZTEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.p1RcYkkOBXh0fzpoZxaTbE1_xNWLfoLqEZv1_0utuzU"
+                    alt="">
+            </div>
+            <div class="msg">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae euismod nulla. Ut ultrices non
+                    elit
+                    quis luctus. Nunc eu arcu odio. Maecenas ut sem vitae diam consectetur consequat at sed justo. Proin
+                    ultrices cursus lacus eu accumsan. Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada
+                    fames ac turpis egestas. Maecenas sollicitudin metus eu purus malesuada, non mollis nibh vehicula.
+                </p>
+            </div>
+            <div class="botones">
+                <button onclick="paso1()">Siguente</button>
+            </div>
+        </div>
+        <div class="card" id="2">
+            <div class="gif">
+                <img src="https://media.tenor.com/hLJJl7NjpN4AAAAM/jenminismo.gif" alt="">
+            </div>
+            <div class="msg">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae euismod nulla. Ut ultrices non
+                    elit
+                    quis luctus. Nunc eu arcu odio. Maecenas ut sem vitae diam consectetur consequat at sed justo. Proin
+                    ultrices cursus lacus eu accumsan. Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada
+                    fames ac turpis egestas. Maecenas sollicitudin metus eu purus malesuada, non mollis nibh vehicula.
+                </p>
+            </div>
+            <div class="botones">
+                <button onclick="paso2()">Siguente</button>
+            </div>
+        </div>
+        <div class="card" id="hola">
+            <div class="gif">
+                <img src="https://media.tenor.com/JUjgDGBKx-MAAAAd/cat-heart.gif" alt="" style="max-width: 20vw;">
+            </div>
+            <div class="msg">
+                <p>¿Sí o no?</p>
+            </div>
+            <div class="botones">
+                <button onclick="paso3()">Sí</button>
+                <button onmouseover="queNo()" readonly>No</button>
+            </div>
+        </div>
+        <div class="card" id="4">
+            <div class="gif">
+                <img src="https://media.tenor.com/3tIy_tudUu8AAAAC/heart-the-pet-collective.gif"
+                    style="max-width:20vw ;" alt="">
+            </div>
+            <div class="msg">
+                <p>Wiii sabía que dirías que sí ;)</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("1").style.display = "block";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("hola").style.display = "none";
+            document.getElementById("4").style.display = "none";
+        });
+
+        function paso1() {
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "block";
+        }
+        function paso2() {
+            document.getElementById("2").style.display = "none";
+            document.getElementById("hola").style.display = "block";
+        }
+        function paso3() {
+            document.getElementById("hola").style.display = "none";
+            document.getElementById("4").style.display = "block";
+        }
+        function queNo() {
+            let div = document.getElementById("hola");
+
+            randomTop = Math.random() * (10 - 0) + 0;
+            randomLeft = Math.random() * (65 - 0) + 0;
+
+            div.style.top = randomTop + "vh";
+            div.style.left = randomLeft + "vw";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
