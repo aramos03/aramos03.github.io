@@ -1,0 +1,6 @@
+<Files index.html>
+AuthName "VerificaTE"
+AuthType Basic
+AuthUserFile .htpasswd
+Require valid-user
+</Files>
